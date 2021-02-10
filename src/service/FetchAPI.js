@@ -62,11 +62,11 @@ function fetchReviews(idMovie) {
   });
 }
 
-function fetchSearch(page, query) {
+function fetchSearch(page, name) {
   const KEY = "6afe4b8475996e1addf24229c39e89a6";
   const GENERAL_LINK_TRENDS = "https://api.themoviedb.org/3";
   return fetch(
-    `${GENERAL_LINK_TRENDS}/search/movie?api_key=${KEY}&query=${query}&language=ru&page=${page}&include_adult=false`
+    `${GENERAL_LINK_TRENDS}/search/movie?api_key=${KEY}&query=${name}&language=ru&page=${page}&include_adult=false`
   ).then((r) => {
     if (r.ok) {
       return r.json();

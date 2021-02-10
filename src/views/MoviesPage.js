@@ -18,6 +18,11 @@ export default class SearchMovie extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
+    const { name } = this.state;
+    this.props.history.push({
+      pathname: this.props.location.pathname,
+      search: `query=${name}`,
+    });
     this.fetchAPI();
   };
 
